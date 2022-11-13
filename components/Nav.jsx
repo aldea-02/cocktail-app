@@ -17,13 +17,13 @@ export default function Nav({ columns, mobileNav }) {
 				className="relative transition-all after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:-scale-x-0 after:bg-white after:duration-300 after:content-[''] hover:after:scale-100 active:bg-white active:text-black"
 				href='/'
 			>
-				Home
+				A-Z
 			</Link>
 			<Link
 				className="relative transition-all after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:-scale-x-0 after:bg-white after:duration-300 after:content-[''] hover:after:scale-100 active:bg-white active:text-black"
 				href='/'
 			>
-				Home
+				Random
 			</Link>
 		</nav>
 	)
