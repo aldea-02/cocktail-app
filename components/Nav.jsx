@@ -8,19 +8,19 @@ export default function Nav({ columns, mobileNav }) {
 			} ${!mobileNav ? 'hidden' : ''} flex text-xl `}
 		>
 			<Link
-				className="relative transition-all after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:-scale-x-0 after:bg-white after:duration-300 after:content-[''] hover:after:scale-100 active:bg-white active:text-black"
+				className="relative w-max transition-all after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:-scale-x-0 after:bg-white after:duration-300 after:content-[''] hover:after:scale-100 active:bg-white active:text-black"
 				href='/'
 			>
 				Home
 			</Link>
 			<Link
-				className="relative transition-all after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:-scale-x-0 after:bg-white after:duration-300 after:content-[''] hover:after:scale-100 active:bg-white active:text-black"
-				href='/'
+				className="relative w-max transition-all after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:-scale-x-0 after:bg-white after:duration-300 after:content-[''] hover:after:scale-100 active:bg-white active:text-black"
+				href='a-z'
 			>
 				A-Z
 			</Link>
 			<Link
-				className="relative transition-all after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:-scale-x-0 after:bg-white after:duration-300 after:content-[''] hover:after:scale-100 active:bg-white active:text-black"
+				className="relative w-max transition-all after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:-scale-x-0 after:bg-white after:duration-300 after:content-[''] hover:after:scale-100 active:bg-white active:text-black"
 				href='/'
 			>
 				Random

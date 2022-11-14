@@ -1,4 +1,26 @@
+'use client'
+
+import { useRouter } from 'next/navigation'
+import { useRef } from 'react'
+
 export default function Home() {
+	const inputField = useRef()
+	const router = useRouter()
+	let isFieldEmpty = true
+
+	const inputHandler = (e) => {
+		const inputFieldString = e.target.value.trim()
+		inputField.current = inputFieldString
+		isFieldEmpty = inputField.current === undefined || inputField.current === ''
+	}
+
+	const submitHandler = (e) => {
+		e.preventDefault()
+		if (!isFieldEmpty) {
+			router.push(`/cocktails/${inputField.current}?searchBy=name`)
+		}
+	}
+
 	return (
 		<div className='flex flex-col items-center justify-between gap-10 p-10 sm:gap-14 sm:p-14 '>
 			<span className='font-serif text-7xl sm:text-9xl '>Cocktail</span>
@@ -13,10 +35,15 @@ export default function Home() {
 				</blockquote>
 				<span className='text-2xl sm:text-5xl'> &quot;</span>
 			</span>
-			<form action='' className='flex flex-col items-center gap-6'>
+			<form
+				action=''
+				onSubmit={submitHandler}
+				className='flex flex-col items-center gap-6'
+			>
 				<input
+					onChange={inputHandler}
 					type='text'
-					className='border border-black p-2 tracking-wider outline-none outline-offset-0 focus:outline-violet-700 font-bold'
+					className='border border-black p-2 font-bold tracking-wider outline-none outline-offset-0 focus:outline-violet-700'
 				/>
 				<button
 					type='submit'
@@ -26,7 +53,7 @@ export default function Home() {
 					<span className='relative'>Submit</span>
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
-						className='relative w-7 group-hover:stroke-white'
+						className='relative w-7 active:stroke-white group-hover:stroke-white'
 						viewBox='0 0 24 24'
 						strokeWidth='1.5'
 						stroke='#000000'
