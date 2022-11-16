@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import NotFound from './not-found'
 
 async function getCocktails(string, type) {
 	let searchFilter = ``
@@ -44,7 +43,7 @@ export default async function CocktailsList({ params, searchParams }) {
 					})}
 				</ul>
 			) : (
-				NotFound()
+				notFound()
 			)}
 		</div>
 	)
@@ -55,7 +54,7 @@ function CocktailItem({ cocktail }) {
 		<li className=' hover:scale-110'>
 			<Link
 				className='text-xl hover:bg-black hover:text-white active:bg-black active:text-white sm:text-2xl lg:text-3xl'
-				href={`cocktails/${cocktail.idDrink}`}
+				href={`cocktail/${cocktail.idDrink}`}
 			>
 				{cocktail.strDrink}
 			</Link>

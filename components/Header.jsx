@@ -10,7 +10,7 @@ export default function Header() {
 		<header
 			className={`${
 				mobileNav ? 'py-7' : 'py-10'
-			} flex max-w-full items-center justify-between bg-black px-8 font-bold text-white sm:py-10`}
+			} flex max-w-full items-center justify-between bg-black px-5 font-bold text-white sm:px-10 sm:py-10`}
 		>
 			<Nav columns={true} mobileNav={mobileNav} />
 			<Image
