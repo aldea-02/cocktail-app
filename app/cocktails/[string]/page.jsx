@@ -32,9 +32,13 @@ export default async function CocktailsList({ params, searchParams }) {
 	const cocktails =
 		(await getCocktails(params.string, searchParams.searchBy)) ?? []
 	return (
-		<div>
+		<div className='flex justify-center p-5'>
 			{!cocktails.length == 0 ? (
-				<ul>
+				<ul className='flex flex-col items-center gap-5'>
+					<div className='border-b-2 border-black p-1 text-2xl sm:text-3xl lg:text-4xl '>
+						Results for
+						<span className='text-violet-700'> {params.string}</span>
+					</div>
 					{cocktails.map((cocktail) => {
 						return <CocktailItem key={cocktail.idDrink} cocktail={cocktail} />
 					})}
@@ -48,8 +52,13 @@ export default async function CocktailsList({ params, searchParams }) {
 
 function CocktailItem({ cocktail }) {
 	return (
-		<li>
-			<span>{cocktail.strDrink}</span>
+		<li className=' hover:scale-110'>
+			<Link
+				className='text-xl hover:bg-black hover:text-white active:bg-black active:text-white sm:text-2xl lg:text-3xl'
+				href={`cocktails/${cocktail.idDrink}`}
+			>
+				{cocktail.strDrink}
+			</Link>
 		</li>
 	)
 }

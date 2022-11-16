@@ -43,7 +43,7 @@ export default function Home() {
 				<input
 					onChange={inputHandler}
 					type='text'
-					className='border border-black p-2 font-bold tracking-wider outline-none outline-offset-0 focus:outline-violet-700'
+					className='border border-black p-2 font-bold tracking-wide outline-none outline-offset-0 focus:outline-violet-700'
 				/>
 				<button
 					type='submit'
