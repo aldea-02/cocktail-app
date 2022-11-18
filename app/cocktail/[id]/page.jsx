@@ -14,7 +14,7 @@ async function getCocktail(id) {
 	}
 }
 
-export default async function CocktailsList({ params }) {
+export default async function CocktailDetail({ params }) {
   const cocktail = await getCocktail(params.id)
 
 	const {

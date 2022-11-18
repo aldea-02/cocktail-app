@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { useState } from 'react'
 import Nav from './Nav'
 
@@ -13,13 +14,15 @@ export default function Header() {
 			} flex max-w-full items-center justify-between bg-black px-5 font-bold text-white sm:px-10 sm:py-10`}
 		>
 			<Nav columns={true} mobileNav={mobileNav} />
-			<Image
-				src='/logo.png'
-				alt='Logo'
-				width={76}
-				height={76}
-				className={`${mobileNav ? 'hidden' : ''} sm:block`}
-			/>
+			<Link href='/'>
+				<Image
+					src='/logo.png'
+					alt='Logo'
+					width={76}
+					height={76}
+					className={`${mobileNav ? 'hidden' : ''} sm:block`}
+				/>
+			</Link>
 			<Nav columns={false} />
 			<div className='sm:hidden'>
 				<button

@@ -2,7 +2,7 @@
 
 import { useRouter } from 'next/navigation'
 
-export default function CocktailsPage() {
+export default function CocktailPage() {
 	const router = useRouter()
 	router.push(`/`)
 	return <></>
