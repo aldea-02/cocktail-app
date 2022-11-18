@@ -21,7 +21,7 @@ export default function Nav({ columns, mobileNav }) {
 			</Link>
 			<Link
 				className="relative w-max transition-all after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:-scale-x-0 after:bg-white after:duration-300 after:content-[''] hover:after:scale-100 active:bg-white active:text-black"
-				href='/'
+				href='/random'
 			>
 				Random
 			</Link>

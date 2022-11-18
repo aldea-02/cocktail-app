@@ -1,10 +1,23 @@
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 
-async function getCocktail(id) {
+async function getCocktail(id, random) {
+	let searchFilter = ``
+
+	switch (random) {
+		case 'true':
+			searchFilter = `random.php`
+			break
+		case 'false':
+			searchFilter = `lookup.php?i=${id}`
+			break
+		default:
+			break
+	}
+
 	try {
 		const res = await fetch(
-			`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`,
+			`https://www.thecocktaildb.com/api/json/v1/1/${searchFilter}`,
 			{ cache: 'no-store' }
 		)
 		const data = await res.json()
@@ -14,8 +27,8 @@ async function getCocktail(id) {
 	}
 }
 
-export default async function CocktailDetail({ params }) {
-  const cocktail = await getCocktail(params.id)
+export default async function CocktailDetail({ params, searchParams }) {
+	const cocktail = await getCocktail(params.id, searchParams.random)
 
 	const {
 		strDrink,
@@ -134,8 +147,6 @@ export default async function CocktailDetail({ params }) {
 				</span>
 				<ul>
 					{ingredients.map((ingredient, i) => {
-						console.log(ingredient)
-
 						if (ingredient) {
 							return (
 								<li
