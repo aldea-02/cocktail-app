@@ -56,7 +56,7 @@ function CocktailItem({ cocktail }) {
 		<li className=' hover:scale-110'>
 			<Link
 				className='text-xl hover:bg-black hover:text-white active:bg-black active:text-white sm:text-2xl lg:text-3xl'
-				href={`cocktail/${cocktail.idDrink}?random=false`}
+				href={`/cocktail/${cocktail.idDrink}?random=false`}
 			>
 				{cocktail.strDrink}
 			</Link>
