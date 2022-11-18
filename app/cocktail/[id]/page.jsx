@@ -18,7 +18,9 @@ async function getCocktail(id, random) {
 	try {
 		const res = await fetch(
 			`https://www.thecocktaildb.com/api/json/v1/1/${searchFilter}`,
-			{ cache: 'no-store' }
+			{
+				next: { revalidate: 10 }
+			}
 		)
 		const data = await res.json()
 		return data.drinks[0]
