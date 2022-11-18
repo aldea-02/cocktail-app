@@ -134,6 +134,7 @@ export default async function CocktailDetail({ params, searchParams }) {
 					alt={`${strDrink} Cocktail Image`}
 					width={150}
 					height={150}
+					quality={100}
 					className='border-2 border-black sm:w-52 sm:border-4'
 				/>
 			</section>

@@ -8,7 +8,6 @@ const nextConfig = {
 			{
 				protocol: 'https',
 				hostname: 'www.thecocktaildb.com',
-				port: '',
 				pathname: '/images/**'
 			}
 		]
